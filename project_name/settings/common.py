@@ -29,7 +29,6 @@ THIRDPARTY_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'oauth2_provider',
-    'nested_admin',
     'rest_framework',
 ]
 

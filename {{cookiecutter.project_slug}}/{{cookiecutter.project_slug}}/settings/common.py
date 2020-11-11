@@ -48,6 +48,7 @@ THIRDPARTY_APPS = [
 ]
 
 LOCAL_APPS = [
+    "{{cookiecutter.project_slug}}.api", "{{cookiecutter.project_slug}}.db"
 ]
 
 

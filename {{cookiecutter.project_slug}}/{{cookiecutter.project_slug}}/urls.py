@@ -17,5 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
+    # admin
     path('admin/', admin.site.urls),
+    # api
+    path('api/', include('assetmatch.api.urls')),
+    # rest 
+    path("", TemplateView.as_view(template_name="web/index.html")),
 ]

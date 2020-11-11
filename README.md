@@ -1,4 +1,4 @@
-# Next Init
+# Django Init
 
 A pre-configured Django template.
 

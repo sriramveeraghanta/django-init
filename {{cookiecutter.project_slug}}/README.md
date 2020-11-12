@@ -1,53 +1,56 @@
-# Heroku Django Starter Template
+# {{cookiecutter.project_name}}
 
-An utterly fantastic project starter template for Django 1.11.
+{{cookiecutter.project_description}}
 
-## Features
+## Setting Up local Env
 
-- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
-- Enhancements to Django's static file serving functionality via WhiteNoise.
-- Latest Python 3.6 runtime environment. 
+Create a new python3 virtual environment.
 
-## How to Use
+```
+$ virtualenv venv
+```
 
-To use this project, follow these steps:
+Activate the virtual env using
 
-1. Create your working environment.
-2. Install Django (`$ pip install django`)
-3. Create a new project using this template
+```
+$ source venv/bin/activate
+```
 
-## Creating Your Project
+For deactivating the virtual env
 
-Using this template to create a new Django app is easy::
+```
+$ deactivate
+```
 
-    $ django-admin.py startproject --template=https://github.com/sriramveeraghanta/heroku-django-template/archive/master.zip --name=Procfile helloworld
+## Installing Packages
 
-(If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
+Before we start the project you need to install required packages to run this server.
 
-You can replace ``helloworld`` with your desired project name.
+```
+pip install -r requirements.txt
+```
 
-## Deployment to Heroku
+Add .env file at the root of the project with the following contents.
 
-    $ git init
-    $ git add -A
-    $ git commit -m "Initial commit"
+```
+APP_ENV=local
+DATABASE_NAME={{cookiecutter.project_slug}}
+```
 
-    $ heroku create
-    $ git push heroku master
+## Running the Project
 
-    $ heroku run python manage.py migrate
+```
+python manage.py runserver
+```
 
-See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
+## Creating Migrations
 
-## Using Python 2.7?
+```
+python manage.py makemigrations
+```
 
-Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
+## Migrate Models
 
-
-## License: MIT
-
-## Further Reading
-
-- [Gunicorn](https://warehouse.python.org/project/gunicorn/)
-- [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
-- [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
+```
+python manage.py migrate
+```

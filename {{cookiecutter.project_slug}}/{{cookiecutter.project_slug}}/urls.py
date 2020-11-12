@@ -23,5 +23,5 @@ urlpatterns = [
     # api
     path('api/', include('{{cookiecutter.project_slug}}.api.urls')),
     # rest 
-    path("", TemplateView.as_view(template_name="web/index.html")),
+    path("", TemplateView.as_view(template_name="index.html")),
 ]

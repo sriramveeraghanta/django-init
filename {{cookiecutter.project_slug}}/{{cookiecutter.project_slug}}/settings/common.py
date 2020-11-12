@@ -45,7 +45,6 @@ THIRDPARTY_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'oauth2_provider',
     'rest_framework',
 ]
 
@@ -90,7 +89,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
-
+}
 
 WSGI_APPLICATION = '{{cookiecutter.project_slug}}.wsgi.application'
 
